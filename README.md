@@ -9,9 +9,8 @@ This ASP.NET Core Web API project allows you to perform basic document managemen
 - [Usage](#usage)
 - [API Endpoints](#api-endpoints)
 - [Schemas](#schemas)
-- [Contributing](#contributing)
-- [License](#license)
 
+  
 ## Prerequisites
 
 Before you begin, ensure you have met the following requirements:
