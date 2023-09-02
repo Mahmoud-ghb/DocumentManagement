@@ -14,6 +14,12 @@ public class DocumentsController : ControllerBase
         _context = context;
     }
 
+    /// <summary>
+    /// Upload a document with value of props and set a unique identifier.
+    /// </summary>
+    /// <param name="Name">The Name of the document to create.</param>
+    /// <param name="File">The file content of the document to create.</param>
+    /// <returns>The document with the specified ID.</returns>
     [HttpPost]
     [Consumes("multipart/form-data")]
     public async Task<ActionResult<Document>> UploadDocument([FromForm] DocumentUploadModel model)
@@ -44,6 +50,11 @@ public class DocumentsController : ControllerBase
     }
 
 
+    /// <summary>
+    /// Retrieves a document by its unique identifier.
+    /// </summary>
+    /// <param name="id">The ID of the document to retrieve.</param>
+    /// <returns>The document with the specified ID.</returns>
     [HttpGet("{id}")]
     public async Task<ActionResult<Document>> GetDocument(int id)
     {
@@ -58,6 +69,11 @@ public class DocumentsController : ControllerBase
         return Ok(document); // Return a 200 OK response with the document as JSON
     }
 
+    /// <summary>
+    /// Update the name of document by its unique identifier.
+    /// </summary>
+    /// <param name="id">The ID of the document to update.</param>
+    /// <returns>The updated document with the specified ID.</returns>
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdateDocument(int id, [FromBody] DocumentUpdateModel model)
     {
@@ -77,6 +93,11 @@ public class DocumentsController : ControllerBase
     }
 
 
+    /// <summary>
+    /// Delete the document of unique identifier.
+    /// </summary>
+    /// <param name="id">The ID of the document to delete.</param>
+    /// <returns>The deleted document with the specified ID.</returns>
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteDocument(int id)
     {
